@@ -1,6 +1,6 @@
 {
   "name": "dyad",
-  "productName": "dyad",
+  "productName": "Petacat",
   "version": "0.21.0",
   "description": "Free, local, open-source AI app builder",
   "main": ".vite/build/main.js",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "clean": "rimraf out scaffold/node_modules",
-    "start": "electron-forge start",
+    "start": "electron-forge start --inspect-electron --enable-logging",
     "dev:engine": "cross-env DYAD_ENGINE_URL=http://localhost:8080/v1 npm start",
     "staging:engine": "cross-env DYAD_ENGINE_URL=https://staging---dyad-llm-engine-kq7pivehnq-uc.a.run.app/v1 npm start",
     "staging:gateway": "cross-env DYAD_GATEWAY_URL=https://staging---litellm-gcp-cloud-run-kq7pivehnq-uc.a.run.app/v1 npm start",
