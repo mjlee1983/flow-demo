@@ -81,7 +81,7 @@ export function HomeChatInput({
               onChange={setInputValue}
               onSubmit={handleCustomSubmit}
               onPaste={handlePaste}
-              placeholder="Ask Petacat to build..."
+              placeholder="Ask Flow to build..."
               disabled={isStreaming}
               excludeCurrentApp={false}
             />

@@ -109,8 +109,8 @@ export function SetupBanner() {
 
   if (itemsNeedAction.length === 0) {
     return (
-      <h1 className="text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 tracking-tight">
-        Build your dream app
+      <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 tracking-tight">
+        What would you like to build today
       </h1>
     );
   }
@@ -133,7 +133,7 @@ export function SetupBanner() {
 
   return (
     <>
-      <p className="text-xl text-zinc-700 dark:text-zinc-300 p-4">Setup Petacat</p>
+      <p className="text-xl text-zinc-700 dark:text-zinc-300 p-4">Setup Flow</p>
       <div className={bannerClasses}>
         <Accordion
           type="multiple"

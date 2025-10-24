@@ -236,7 +236,7 @@ export function LexicalChatInput({
   onSubmit,
   onPaste,
   excludeCurrentApp,
-  placeholder = "Ask Petacat to build...",
+  placeholder = "Ask Flow to build...",
   disabled = false,
 }: LexicalChatInputProps) {
   const { apps } = useLoadApps();

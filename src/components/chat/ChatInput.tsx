@@ -292,7 +292,7 @@ export function ChatInput({ chatId }: { chatId?: number }) {
               onChange={setInputValue}
               onSubmit={handleSubmit}
               onPaste={handlePaste}
-              placeholder="Ask Petacat to build..."
+              placeholder="Ask Flow to build..."
               excludeCurrentApp={true}
             />
 

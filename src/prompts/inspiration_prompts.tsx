@@ -21,7 +21,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "TODO list app",
+    label: "Quality Dashboard",
   },
   {
     icon: (
@@ -39,7 +39,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Landing Page",
+    label: "ERP Control Panel",
   },
   {
     icon: (
@@ -57,7 +57,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Sign Up Form",
+    label: "Process Mining Tool",
   },
   {
     icon: (
@@ -81,7 +81,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Mood Journal & Tracker",
+    label: "Workflow Application",
   },
   {
     icon: (
@@ -99,7 +99,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Interactive Story Game",
+    label: "Robotic Process Automation Tool",
   },
   {
     icon: (
@@ -117,7 +117,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Recipe Finder & Meal Planner",
+    label: "Demand Forecasting",
   },
   {
     icon: (
@@ -135,7 +135,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Personal Finance Dashboard",
+    label: "Urgent Issues Dashboard",
   },
   {
     icon: (
@@ -159,7 +159,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Travel Memory Map",
+    label: "Team Communication App",
   },
   {
     icon: (
@@ -177,7 +177,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "AI Writing Assistant",
+    label: "Real-time KPI Tracker",
   },
   {
     icon: (
@@ -195,7 +195,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Habit Streak Tracker",
+    label: "QR Code Scanners",
   },
   {
     icon: (
@@ -213,7 +213,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Newsletter Creator",
+    label: "Dispute Resolution",
   },
   {
     icon: (
@@ -231,7 +231,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Music Discovery App",
+    label: "RMA Workflow Tool",
   },
   {
     icon: (
@@ -249,7 +249,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "3D Portfolio Viewer",
+    label: "Automatic Task Assignment",
   },
   {
     icon: (
@@ -267,7 +267,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "AI Image Generator",
+    label: "Customer Support Portal",
   },
   {
     icon: (
@@ -285,7 +285,7 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Pomodoro Focus Timer",
+    label: "Shift Scheduling System",
   },
   {
     icon: (
@@ -303,6 +303,6 @@ export const INSPIRATION_PROMPTS = [
         />
       </svg>
     ),
-    label: "Virtual Avatar Builder",
+    label: "Quality Inspection App",
   },
 ];
