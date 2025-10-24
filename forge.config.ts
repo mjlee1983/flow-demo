@@ -54,7 +54,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     protocols: [
       {
-        name: "Dyad",
+        name: "Flow",
         schemes: ["dyad"],
       },
     ],

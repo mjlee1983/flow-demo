@@ -11,7 +11,7 @@ const Index = () => {
           Start building your amazing project here!
         </p>
       </div>
-      <MadeWithDyad />
+      <MadeWithFlow />
     </div>
   );
 };

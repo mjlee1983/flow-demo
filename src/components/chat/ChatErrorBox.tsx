@@ -18,7 +18,7 @@ export function ChatErrorBox({
         {error}
         <span className="ml-1">
           <ExternalLink href="https://dyad.sh/pro">
-            Access with Dyad Pro
+            Access with Flow Pro
           </ExternalLink>
         </span>{" "}
         or switch to another model.
@@ -37,7 +37,7 @@ export function ChatErrorBox({
         {error}
         <span className="ml-1">
           <ExternalLink href="https://dyad.sh/pro">
-            Upgrade to Dyad Pro
+            Upgrade to Flow Pro
           </ExternalLink>
         </span>{" "}
         or read the
@@ -54,9 +54,9 @@ export function ChatErrorBox({
     return (
       <ChatInfoContainer onDismiss={onDismiss}>
         <span>
-          Looks like you don't have a valid Dyad Pro key.{" "}
+          Looks like you don't have a valid Flow Pro key.{" "}
           <ExternalLink href="https://dyad.sh/pro">
-            Upgrade to Dyad Pro
+            Upgrade to Flow Pro
           </ExternalLink>{" "}
           today.
         </span>
@@ -67,9 +67,9 @@ export function ChatErrorBox({
     return (
       <ChatInfoContainer onDismiss={onDismiss}>
         <span>
-          You have used all of your Dyad AI credits this month.{" "}
+          You have used all of your Flow AI credits this month.{" "}
           <ExternalLink href="https://academy.dyad.sh/subscription">
-            Upgrade to Dyad Max
+            Upgrade to Flow Max
           </ExternalLink>{" "}
           and get more AI credits
         </span>
