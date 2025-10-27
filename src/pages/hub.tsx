@@ -7,6 +7,7 @@ import { useTemplates } from "@/hooks/useTemplates";
 import { TemplateCard } from "@/components/TemplateCard";
 import { CreateAppDialog } from "@/components/CreateAppDialog";
 import { NeonConnector } from "@/components/NeonConnector";
+import { Template } from "@/shared/templates";
 
 const HubPage: React.FC = () => {
   const router = useRouter();
@@ -27,6 +28,63 @@ const HubPage: React.FC = () => {
     templates?.filter((template) => template.isOfficial) || [];
   const communityTemplates =
     templates?.filter((template) => !template.isOfficial) || [];
+
+  const demoTemplates: Template[] = [
+    {
+      id: "erp_control_panel",
+      title: "ERP Control Panel",
+      description:
+        "Build any dashboard or control panel by connecting to your ERP software",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/37369745/file/original-5b1790b6af6d90c752bb12a2243feaaa.png?resize=1504x1128&vertical=center",
+      isOfficial: false,
+    },
+    {
+      id: "wms_dashboard",
+      title: "WMS Dashboard",
+      description:
+        "See warehouse stats in a single page. Build dashboards and monitors for your WMS",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/26042268/file/original-bf96ae1308d181aa77f00a2f6f23278e.png?resize=1504x1128&vertical=center",
+      isOfficial: false,
+    },
+    {
+      id: "rma_tools",
+      title: "RMA Workflows",
+      description:
+        "Create RMA workflow tools that your customer support agents can use to create and manage RMA processes",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/16911311/file/original-056555dd17ec0c35e8ea42898e6e1e28.png?resize=2048x5791&vertical=center",
+      isOfficial: false,
+    },
+    {
+      id: "qr_scanner",
+      title: "QR Scanner",
+      description:
+        "QR code scanner apps that can use either scanner devices or smartphones to scan for progress, status, or issues",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/33310548/file/original-d6c056b7112ddb9b32c537ff9f00ae0e.png?resize=2048x1536&vertical=center",
+      isOfficial: false,
+    },
+    {
+      id: "team_communication",
+      title: "Team Communication",
+      description:
+        "Custom internal communication system with persistent storage and administration",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/17076932/file/original-354c7b6fedf19864330c02e58a0c9f2b.png?resize=2048x1536&vertical=center",
+      isOfficial: false,
+    },
+    {
+      id: "shift_manager",
+      title: "Shift Scheduling",
+      description:
+        "Build shift scheduling system your employees can use both mobile and with a clock system, and syncs with HR systems",
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/44252227/file/edfa412ce8126d745fc1c42aaa97514f.png?resize=2048x1536&vertical=center",
+      isOfficial: false,
+    },
+  ];
 
   return (
     <div className="min-h-screen px-8 py-4">
@@ -49,6 +107,23 @@ const HubPage: React.FC = () => {
             {isLoading && " Loading additional templates..."}
           </p>
         </header>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Supported templates
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {demoTemplates.map((template, idx) => (
+              <TemplateCard
+                key={template.id}
+                template={template}
+                isSelected={idx === 1}
+                onSelect={handleTemplateSelect}
+                onCreateApp={handleCreateApp}
+              />
+            ))}
+          </div>
+        </section>
 
         {/* Official Templates Section */}
         {officialTemplates.length > 0 && (

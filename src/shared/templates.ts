@@ -24,7 +24,7 @@ export const DEFAULT_TEMPLATE = {
   title: "React.js Template",
   description: "Uses React.js, Vite, Shadcn, Tailwind and TypeScript.",
   imageUrl:
-    "https://github.com/user-attachments/assets/5b700eab-b28c-498e-96de-8649b14c16d9",
+    "https://cdn.dribbble.com/userupload/45414001/file/a9ea61b59a51a369b0b583a032773dc0.png?resize=2048x1536&vertical=center",
   isOfficial: true,
 };
 

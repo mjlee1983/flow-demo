@@ -42,6 +42,7 @@ import {
 import { useRunApp } from "@/hooks/useRunApp";
 import { useShortcut } from "@/hooks/useShortcut";
 
+const FIXED_URL = "https://visually-aligned-board.vercel.app/";
 interface ErrorBannerProps {
   error: string | undefined;
   onDismiss: () => void;
@@ -125,7 +126,7 @@ const ErrorBanner = ({ error, onDismiss, onAIFix }: ErrorBannerProps) => {
 };
 
 // Preview iframe component
-export const PreviewIframe = ({ loading }: { loading: boolean }) => {
+export const PreviewIframe = ({ loading, useFixedUrl = false }: { loading: boolean, useFixedUrl?: boolean }) => {
   const selectedAppId = useAtomValue(selectedAppIdAtom);
   const { appUrl, originalUrl } = useAtomValue(appUrlAtom);
   const setAppOutput = useSetAtom(appOutputAtom);
@@ -567,7 +568,7 @@ export const PreviewIframe = ({ loading }: { loading: boolean }) => {
             key={reloadKey}
             title={`Preview for App ${selectedAppId}`}
             className="w-full h-full border-none bg-white dark:bg-gray-950"
-            src={appUrl}
+            src={useFixedUrl ? FIXED_URL : appUrl}
             allow="clipboard-read; clipboard-write; fullscreen; microphone; camera; display-capture; geolocation; autoplay; picture-in-picture"
           />
         )}

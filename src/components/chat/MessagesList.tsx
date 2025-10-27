@@ -18,6 +18,7 @@ import { useLanguageModelProviders } from "@/hooks/useLanguageModelProviders";
 import { useSettings } from "@/hooks/useSettings";
 import { useUserBudgetInfo } from "@/hooks/useUserBudgetInfo";
 import { PromoMessage } from "./PromoMessage";
+import { MockFeaturesChat } from "./MockFeaturesChat";
 
 interface MessagesListProps {
   messages: Message[];
@@ -52,20 +53,52 @@ export const MessagesList = forwardRef<HTMLDivElement, MessagesListProps>(
       return null;
     };
 
+    const pmMock : Message = {
+        id: 123123123,
+        role: "assistant",
+        content: `It looks like you are trying to build a quality monitor style dashboard, would you like to use Quality Monitor template to build this application?`,
+    };
+    const pmMock2: Message = {
+      id: 123123124,
+      role: "user",
+      content: `yes, use the quality monitor template`,
+    };
+    const pmMock3: Message = {
+      id: 123123123,
+      role: "assistant",
+      content: `Got it, I will use the quality monitor template to build the control panel. I've compiled a list of features and requirements you're likely looking for, please select and choose features you'd like the application to include. Once you are done, you can click Approve to start building, or just simply let me know if you want anything else`,
+    };
+    const firstMessage: Message | undefined = messages.length > 0 ? messages[0] : undefined;
+
     return (
       <div
         className="flex-1 overflow-y-auto p-4"
         ref={ref}
         data-testid="messages-list"
       >
+        {firstMessage ? (
+          <ChatMessage
+            message={firstMessage}
+            isLastMessage={0 === messages.length - 1}
+          />
+        ) : (
+          ""
+        )}
+        <ChatMessage message={pmMock} isLastMessage={false} />
+        <ChatMessage message={pmMock2} isLastMessage={false} />
+        <ChatMessage message={pmMock3} isLastMessage={false} />
+        <MockFeaturesChat error={"dfdsf"} />
+
         {messages.length > 0
-          ? messages.map((message, index) => (
-              <ChatMessage
-                key={index}
-                message={message}
-                isLastMessage={index === messages.length - 1}
-              />
-            ))
+          ? messages
+              .slice(1)
+              .map((message, index) => (
+                <ChatMessage
+                  key={index}
+                  message={message}
+                  isLastMessage={index === messages.length - 1}
+                />
+              ))
           : !renderSetupBanner() && (
               <div className="flex flex-col items-center justify-center h-full max-w-2xl mx-auto">
                 <div className="flex flex-1 items-center justify-center text-gray-500">
