@@ -195,13 +195,14 @@ export default function HomePage() {
                 type="button"
                 key={index}
                 onClick={() => setInputValue(`Build me a ${item.label}`)}
-                className="flex items-center gap-3 px-4 py-2 rounded-xl border border-gray-200
-                           bg-white/50 backdrop-blur-sm
+                className="flex items-center gap-3 px-4 py-2 rounded-3xl p-2
+                           backdrop-blur-sm
+                           bg-gray-400/20
                            transition-all duration-200
-                           hover:bg-white hover:shadow-md hover:border-gray-300
+                           hover:bg-white hover:shadow-md hover:bg-gray-200/20
                            active:scale-[0.98]
-                           dark:bg-gray-800/50 dark:border-gray-700
-                           dark:hover:bg-gray-800 dark:hover:border-gray-600"
+                           dark:bg-282a2c
+                           dark:hover:bg-gray-200/20"
               >
                 <span className="text-gray-700 dark:text-gray-300">
                   {item.icon}
@@ -216,13 +217,13 @@ export default function HomePage() {
           <button
             type="button"
             onClick={() => setRandomPrompts(getRandomPrompts())}
-            className="self-center flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200
-                       bg-white/50 backdrop-blur-sm
+            className="self-center flex items-center gap-2 px-4 py-2 rounded-3xl p-2
+                       bg-gray-400/20 backdrop-blur-sm
                        transition-all duration-200
-                       hover:bg-white hover:shadow-md hover:border-gray-300
+                       hover:bg-white hover:shadow-md hover:bg-gray-200/20
                        active:scale-[0.98]
-                       dark:bg-gray-800/50 dark:border-gray-700
-                       dark:hover:bg-gray-800 dark:hover:border-gray-600"
+                       dark:bg-282a2c
+                       dark:hover:bg-gray-200/20"
           >
             <svg
               className="w-5 h-5 text-gray-700 dark:text-gray-300"
