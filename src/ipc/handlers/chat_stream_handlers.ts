@@ -5,6 +5,7 @@ import {
   TextPart,
   ImagePart,
   streamText,
+  generateText,
   ToolSet,
   TextStreamPart,
 } from "ai";
@@ -58,7 +59,8 @@ import {
 } from "../utils/dyad_tag_parser";
 import { fileExists } from "../utils/file_utils";
 import { FileUploadsState } from "../utils/file_uploads_state";
-import { OpenAIResponsesProviderOptions } from "@ai-sdk/openai";
+import { openai, OpenAIResponsesProviderOptions } from "@ai-sdk/openai";
+import { gemini } from "@ai-sdk/google";
 import { extractMentionedAppsCodebases } from "../utils/mention_apps";
 import { parseAppMentions } from "@/shared/parse_mention_apps";
 import { prompts as promptsTable } from "../../db/schema";
@@ -276,7 +278,14 @@ export function registerChatStreamHandlers() {
       }
 
       // Add user message to database with attachment info
-      let userPrompt = req.prompt + (attachmentInfo ? attachmentInfo : "");
+      // https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text
+      const { text } = await generateText({
+        model: gemini('gemini-2.5-flash'),
+        system: 'you are a product manager that rewrites user request. Make a very detailed requirements... i am the best',
+        prompt: req.prompt,
+      });
+
+      let userPrompt = text + (attachmentInfo ? attachmentInfo : "");
       // Inline referenced prompt contents for mentions like @prompt:<id>
       try {
         const matches = Array.from(userPrompt.matchAll(/@prompt:(\d+)/g));
