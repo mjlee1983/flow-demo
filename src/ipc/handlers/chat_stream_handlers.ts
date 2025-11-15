@@ -66,6 +66,7 @@ import { parseAppMentions } from "@/shared/parse_mention_apps";
 import { prompts as promptsTable } from "../../db/schema";
 import { inArray } from "drizzle-orm";
 import { replacePromptReference } from "../utils/replacePromptReference";
+import { anthropic, createAnthropic } from "@ai-sdk/anthropic";
 
 type AsyncIterableStream<T> = AsyncIterable<T> & ReadableStream<T>;
 
@@ -279,9 +280,14 @@ export function registerChatStreamHandlers() {
 
       // Add user message to database with attachment info
       // https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text
-      const { text } = await generateText({
-        model: gemini('gemini-2.5-flash'),
-        system: 'you are a product manager that rewrites user request. Make a very detailed requirements... i am the best',
+      const anthropicClient = createAnthropic({
+        apiKey: process.env.ANTHROPIC_API_KEY,
+      });
+
+
+      const { text }: { text: string } = await generateText({
+        model: anthropicClient("claude-haiku-4-5"),
+        system: "you are a product manager that rewrites user request. Make a very detailed requirements... i am the best",
         prompt: req.prompt,
       });
 
